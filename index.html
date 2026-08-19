@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>prompt/work — AI開発の成果物ポートフォリオ</title>
+<meta name="description" content="プロンプト設計から画像生成、仕上げまでを一貫して担当。バナー・インフォグラフィック・LPなど、AIで作った成果物を業種別に紹介するポートフォリオサイトです。">
+
+<!-- OGP -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="prompt/work — AI開発の成果物ポートフォリオ">
+<meta property="og:description" content="プロンプト設計から画像生成、仕上げまでを一貫して担当。バナー・インフォグラフィック・LPなど、AIで作った成果物を業種別に紹介するポートフォリオサイトです。">
+<meta property="og:image" content="images/hero-art-v2.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="prompt/work — AI開発の成果物ポートフォリオ">
+<meta name="twitter:description" content="プロンプト設計から画像生成、仕上げまでを一貫して担当するAI開発ポートフォリオ。">
+<meta name="twitter:image" content="images/hero-art-v2.png">
+
+<!-- Favicon (emoji) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%A8%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">本文へスキップ</a>
+
+<!-- ============ HEADER / NAV ============ -->
+<header id="site-header" class="site-header">
+  <div class="header-inner">
+    <a href="#top" class="logo">prompt<span class="logo-slash">/</span>work</a>
+
+    <nav class="main-nav" aria-label="サイト内ナビゲーション">
+      <ul class="nav-pill" id="nav-pill">
+        <li><a href="#works">Works</a></li>
+        <li><a href="#method">Method<span class="nav-sub">（つくり方）</span></a></li>
+        <li><a href="#guide">Guide<span class="nav-sub">（用途から探す）</span></a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a href="#contact" class="btn btn-primary header-cta">相談する</a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-pill" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section id="top" class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1 class="hero-heading">
+          <span class="accent-text">プロンプトが、</span><span style="white-space:nowrap;">成果物になる。</span>
+        </h1>
+        <p class="hero-sub">コンセプト設計から画像生成、仕上げの調整までを一貫して担当。バナー・インフォグラフィック・LPを、目的に合わせてかたちにします。</p>
+        <div class="hero-actions">
+          <a href="#works" class="btn btn-primary">作品を見る</a>
+          <a href="#contact" class="btn btn-ghost">相談する</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="images/hero-art-v2.png" alt="プロンプトの文字から一枚のビジュアルが生まれる様子を描いたイラスト" width="1024" height="1024" fetchpriority="high">
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">
+      <svg width="22" height="34" viewBox="0 0 22 34" fill="none">
+        <rect x="1" y="1" width="20" height="32" rx="10" stroke="currentColor" stroke-width="2"/>
+        <circle class="scroll-cue-dot" cx="11" cy="10" r="3" fill="currentColor"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ VALUE STRIP ============ -->
+  <section class="value-strip" aria-label="対応内容">
+    <div class="value-strip-inner">
+      <div class="value-pill-row">
+        <div class="value-pill-group">
+          <span class="value-pill-label">対応形式</span>
+          <span class="pill pill-outline">バナー</span>
+          <span class="pill pill-outline">インフォグラフィック</span>
+          <span class="pill pill-outline">LP</span>
+        </div>
+        <div class="value-pill-group">
+          <span class="value-pill-label">対応業種</span>
+          <span class="pill pill-outline">採用</span>
+          <span class="pill pill-outline">不動産</span>
+          <span class="pill pill-outline">金融</span>
+          <span class="pill pill-outline">教育</span>
+          <span class="pill pill-outline">レジャー</span>
+        </div>
+        <div class="value-pill-group">
+          <span class="value-pill-label">制作フロー</span>
+          <span class="pill pill-outline">設計 → 生成 → 選定 → 仕上げ</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marquee-track">
+        <!-- populated by JS (duplicated for seamless loop) -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STYLE RANGE GALLERY (Obys-style) ============ -->
+  <section class="style-gallery" aria-label="作品のトーンの幅">
+    <div class="style-gallery-frame">
+      <button class="gallery-arrow gallery-arrow-prev" id="gallery-prev" aria-label="前の作品">‹</button>
+      <div class="style-gallery-track" id="style-gallery-track" tabindex="0"></div>
+      <button class="gallery-arrow gallery-arrow-next" id="gallery-next" aria-label="次の作品">›</button>
+    </div>
+  </section>
+
+  <!-- ============ WORKS GRID ============ -->
+  <section id="works" class="works-section">
+    <div class="section-inner">
+      <p class="eyebrow">Works</p>
+      <h2 class="section-heading">つくったもの、<span class="accent-secondary-text">ぜんぶ。</span></h2>
+
+      <div class="filters" role="group" aria-label="作品の絞り込み">
+        <div class="filter-row">
+          <span class="filter-row-label">成果物タイプ</span>
+          <div class="filter-buttons" id="filter-type" data-filter-axis="type">
+            <button class="pill filter-btn is-active" data-value="all">すべて</button>
+            <button class="pill filter-btn" data-value="banner">バナー</button>
+            <button class="pill filter-btn" data-value="infographic">インフォグラフィック</button>
+            <button class="pill filter-btn" data-value="lp">LP</button>
+          </div>
+        </div>
+        <div class="filter-row">
+          <span class="filter-row-label">業種・テーマ</span>
+          <div class="filter-buttons" id="filter-industry" data-filter-axis="industry">
+            <button class="pill filter-btn is-active" data-value="all">すべて</button>
+            <button class="pill filter-btn" data-value="recruit">採用</button>
+            <button class="pill filter-btn" data-value="realestate">不動産</button>
+            <button class="pill filter-btn" data-value="finance">金融</button>
+            <button class="pill filter-btn" data-value="education">教育</button>
+            <button class="pill filter-btn" data-value="leisure">レジャー</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="filter-empty" id="filter-empty" hidden>該当する作品がありません。条件を変えてお試しください。</p>
+
+      <div class="works-grid" id="works-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ METHOD ============ -->
+  <section id="method" class="method-section">
+    <div class="section-inner">
+      <p class="eyebrow">Method</p>
+      <h2 class="section-heading">「つくる」は、<span class="accent-text">設計すること。</span></h2>
+      <p class="section-lead">AI開発は画像を生成するだけの作業ではありません。目的の言語化から仕上げの微調整まで、4つのステップで成果物の質をつくり込みます。</p>
+
+      <ol class="method-steps">
+        <li class="method-step">
+          <span class="method-step-no">01</span>
+          <h3>プロンプト設計</h3>
+          <p>誰に・何を・どんなトーンで伝えるかを言語化し、構図やタイポグラフィまで含めて指示に落とし込みます。</p>
+        </li>
+        <li class="method-step">
+          <span class="method-step-no">02</span>
+          <h3>生成</h3>
+          <p>fal.ai（gpt-image-2）で複数パターンを一気に出力。ひとつの依頼から異なるトーンの案を並行して検討します。</p>
+        </li>
+        <li class="method-step">
+          <span class="method-step-no">03</span>
+          <h3>選定</h3>
+          <p>目的とブランドの温度感に照らして案を絞り込み、必要であれば要素だけを再生成して精度を上げます。</p>
+        </li>
+        <li class="method-step">
+          <span class="method-step-no">04</span>
+          <h3>ブラッシュアップ</h3>
+          <p>文字組み・余白・色味を手作業で微調整。生成物を「素材」から「成果物」に仕上げます。</p>
+        </li>
+      </ol>
+
+      <div class="method-example">
+        <div class="method-example-media">
+          <img src="images/work-fal-api.png" alt="fal APIの使い方を解説したインフォグラフィック" loading="lazy" width="1088" height="608">
+        </div>
+        <div class="method-example-copy">
+          <p class="method-example-label">Example</p>
+          <h3>このノウハウ発信自体が、実例です。</h3>
+          <p>「fal APIの使い方」は、上のプロセスをそのまま使って制作したインフォグラフィックです。複雑なAPIの利用フローを、専門知識がなくても迷わず読めるビジュアルに翻訳しました。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GUIDE BY USECASE ============ -->
+  <section id="guide" class="guide-section">
+    <div class="section-inner">
+      <p class="eyebrow">Guide</p>
+      <h2 class="section-heading">あなたの立場から<span class="accent-secondary-text">探す。</span></h2>
+      <p class="section-lead">業種によって、抱えている課題も求める見せ方も違います。近いお悩みのカードから、関連する作品をチェックできます。</p>
+
+      <div class="guide-grid" id="guide-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ CTA / CONTACT ============ -->
+  <section id="contact" class="cta-section">
+    <div class="section-inner cta-inner">
+      <h2 class="cta-heading">まずは、<span class="accent-text">気軽にご相談ください。</span></h2>
+      <p class="cta-sub">バナー1枚から、LP全体の設計まで。要件が固まっていない段階でも大丈夫です。</p>
+      <a href="mailto:sugaideyuki@gmail.com?subject=ポートフォリオを見てご相談" class="btn btn-primary btn-lg">メールで相談する</a>
+      <p class="cta-mail">sugaideyuki@gmail.com</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="section-inner footer-inner">
+    <div class="footer-top">
+      <a href="#top" class="logo footer-logo">prompt<span class="logo-slash">/</span>work</a>
+      <ul class="footer-nav">
+        <li><a href="#works">Works</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#guide">Guide</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>Contact: <a href="mailto:sugaideyuki@gmail.com">sugaideyuki@gmail.com</a></p>
+      <p>Tools: fal.ai (gpt-image-2)</p>
+      <p class="footer-copyright">&copy; <span id="footer-year">2026</span> prompt/work. All works generated with fal.ai and hand-finished.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CASE STUDY MODAL ============ -->
+<div class="modal-overlay" id="case-modal" role="dialog" aria-modal="true" aria-labelledby="case-modal-title" hidden>
+  <div class="modal-panel">
+    <button class="modal-close" id="modal-close" aria-label="閉じる">&times;</button>
+    <div class="modal-scroll" id="modal-scroll">
+      <!-- populated by JS -->
+    </div>
+    <div class="modal-nav">
+      <button class="modal-nav-btn" id="modal-prev">( 前の作品 )</button>
+      <button class="modal-nav-btn" id="modal-next">( 次の作品 )</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
