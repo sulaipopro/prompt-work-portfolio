@@ -247,9 +247,9 @@ h1,h2,h3,h4,p{ margin:0; }
   position:absolute;
   z-index:2;
   top:50%;
-  right:clamp(-40px, -3vw, 0px);
+  right:0;
   transform:translateY(-46%);
-  width:clamp(420px, 46vw, 760px);
+  width:clamp(360px, 42vw, 760px);
   aspect-ratio:1/1;
   overflow:hidden;
   border-radius:var(--radius-card-lg);
@@ -476,7 +476,8 @@ h1,h2,h3,h4,p{ margin:0; }
 .works-grid{
   display:grid;
   grid-template-columns:repeat(4, 1fr);
-  grid-auto-rows:260px;
+  grid-auto-rows:auto;
+  align-items:start;
   gap:22px;
 }
 .work-card{
@@ -500,17 +501,21 @@ h1,h2,h3,h4,p{ margin:0; }
 .work-card:hover{ transform:translateY(-4px); box-shadow:0 20px 40px -18px rgba(0,0,0,.22); }
 .work-card.is-featured{
   grid-column:span 2;
-  grid-row:span 2;
 }
 .work-card-media{
   position:relative;
-  flex:1;
+  aspect-ratio:16/9;
   overflow:hidden;
   background:var(--bg-base);
 }
 .work-card-media img{
   width:100%; height:100%; object-fit:cover;
   transition:transform .35s ease;
+}
+/* the amusement-park feature image is a tall portrait screenshot —
+   contain it in full instead of cropping it to the wide 16:9 box */
+.work-card.is-featured .work-card-media img{
+  object-fit:contain;
 }
 .work-card:hover .work-card-media img{ transform:scale(1.045); }
 .work-card-featured-badge{
@@ -538,10 +543,8 @@ h1,h2,h3,h4,p{ margin:0; }
 .work-card[hidden]{ display:none; }
 
 @media (max-width:900px){
-  .works-grid{ grid-template-columns:repeat(2, 1fr); grid-auto-rows:auto; }
-  .work-card.is-featured{ grid-column:span 2; grid-row:auto; }
-  .work-card.is-featured .work-card-media{ aspect-ratio:16/10; }
-  .work-card:not(.is-featured) .work-card-media{ aspect-ratio:4/3; }
+  .works-grid{ grid-template-columns:repeat(2, 1fr); }
+  .work-card.is-featured{ grid-column:span 2; }
 }
 @media (max-width:560px){
   .works-grid{ grid-template-columns:1fr; }
