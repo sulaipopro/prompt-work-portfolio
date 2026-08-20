@@ -227,6 +227,8 @@ h1,h2,h3,h4,p{ margin:0; }
   position:relative;
 }
 .hero-copy{ position:relative; z-index:3; max-width:64%; }
+.hero-icon{ margin-bottom:18px; line-height:0; }
+.hero-icon svg{ display:block; }
 .hero-heading{
   font-weight:900;
   font-size:clamp(2.8rem, 7vw, 6.4rem);
