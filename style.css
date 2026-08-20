@@ -712,15 +712,23 @@ h1,h2,h3,h4,p{ margin:0; }
 .modal-scroll{ max-height:78vh; overflow-y:auto; padding:0 0 8px; }
 
 .case-hero{
-  position:relative; background:var(--bg-cool);
+  position:relative;
+  background:linear-gradient(160deg, var(--bg-cool) 0%, var(--bg-warm) 100%);
   display:flex; align-items:center; justify-content:center;
-  padding:24px;
+  padding:48px 40px;
+  min-height:280px;
 }
 .case-hero img{
   display:block;
   width:auto; height:auto;
-  max-width:100%; max-height:65vh;
+  max-width:56%; max-height:38vh;
   object-fit:contain;
+  border-radius:14px;
+  box-shadow:0 24px 48px -20px rgba(34,20,14,.25);
+  background:var(--bg-base);
+}
+@media (max-width:640px){
+  .case-hero img{ max-width:78%; max-height:32vh; }
 }
 .case-body{ padding:40px 44px 8px; }
 .case-tags{ display:flex; gap:8px; margin-bottom:18px; flex-wrap:wrap; }
