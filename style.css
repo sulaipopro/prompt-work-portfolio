@@ -227,9 +227,20 @@ h1,h2,h3,h4,p{ margin:0; }
   position:relative;
 }
 .hero-copy{ position:relative; z-index:3; max-width:64%; }
-.hero-icon{ margin-bottom:18px; line-height:0; }
-.hero-icon svg{ display:block; }
+.hero-icon{
+  position:absolute;
+  top:-56px; left:-40px;
+  width:min(300px, 34vw);
+  height:min(300px, 34vw);
+  opacity:.16;
+  z-index:0;
+  pointer-events:none;
+  line-height:0;
+}
+.hero-icon svg{ display:block; width:100%; height:100%; }
 .hero-heading{
+  position:relative;
+  z-index:1;
   font-weight:900;
   font-size:clamp(2.8rem, 7vw, 6.4rem);
   line-height:1.02;
